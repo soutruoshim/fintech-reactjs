@@ -1,11 +1,25 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-     <div className="App">
-       
-       <h1>Banking App</h1>
-     </div>
+    <BrowserRouter>
+      <Navbar />
+
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
+
+        {/* WILDCARD ROUTE */}
+        <Route path="*" element={<NotFound />} />
+
+      </Routes>
+
+      <Footer />
+    </BrowserRouter>
   );
 }
 
