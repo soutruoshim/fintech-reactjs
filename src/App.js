@@ -13,6 +13,8 @@ import Transactions from "./pages/Transactions";
 import Transfer from "./pages/Transfer";
 
 import { AuditorRoute, CustomerRoute } from "./services/Guard";
+import AuditorDashboard from "./pages/AuditorDashboard";
+import Deposit from "./pages/Deposit";
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
         <Route path="/transactions" element={<CustomerRoute element={<Transactions />} />} />
         <Route path="/transfer" element={<CustomerRoute element={<Transfer />} />} />
 
+        <Route path="/auditor-dashboard" element={<AuditorRoute element={<AuditorDashboard />} />} />
+        <Route path="/deposit" element={<AuditorRoute element={<Deposit />} />} />
 
         {/* WILDCARD ROUTE */}
         <Route path="*" element={<NotFound />} />
