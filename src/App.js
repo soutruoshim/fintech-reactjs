@@ -9,6 +9,8 @@ import Profile from "./pages/Profile";
 import UpdateProfile from "./pages/UpdateProfile.jsx";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
+import Transactions from "./pages/Transactions";
+import Transfer from "./pages/Transfer";
 
 import { AuditorRoute, CustomerRoute } from "./services/Guard";
 
@@ -29,6 +31,10 @@ function App() {
 
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+
+        <Route path="/transactions" element={<CustomerRoute element={<Transactions />} />} />
+        <Route path="/transfer" element={<CustomerRoute element={<Transfer />} />} />
+
 
         {/* WILDCARD ROUTE */}
         <Route path="*" element={<NotFound />} />
